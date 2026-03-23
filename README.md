@@ -16,7 +16,7 @@
 | 代码规范 | ESLint + React Compiler |
 
 ## 项目预览
-https://grant-ccc.github.io/admin-system/
+https://admin-system-coral.vercel.app
 
 ## 项目功能
 
