@@ -9,7 +9,7 @@ import './mock/users'
 import './mock/dashboard'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename="/admin-system">
+  <BrowserRouter>
     <App />
   </BrowserRouter>
 )
