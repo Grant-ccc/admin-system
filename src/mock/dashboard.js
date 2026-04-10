@@ -3,7 +3,7 @@ import Mock from 'mockjs'
 // 1. 顶部统计卡片
 Mock.mock('/api/dashboard/stat', 'get', () => {
   return {
-    userCount: Mock.Random.integer(1000, 5000),
+    userCount: Mock.Random.integer(1000, 5000), //生成指定范围内随机数
     orderCount: Mock.Random.integer(200, 1000),
     visitCount: Mock.Random.integer(5000, 20000),
     salesAmount: Mock.Random.integer(100000, 500000)
@@ -13,13 +13,13 @@ Mock.mock('/api/dashboard/stat', 'get', () => {
 // 2. 折线图：访问趋势
 Mock.mock('/api/dashboard/visit-trend', 'get', () => {
   return Mock.mock({
-    'list|7': [
+    'list|7': [ //7天
       {
-        date: '@date("MM-dd")',
-        value: '@integer(200, 2000)'
+        date: '@date("MM-dd")', //月-日
+        value: '@integer(200, 2000)' //随机整数
       }
     ]
-  }).list
+  }).list //提取出数组部分
 })
 
 // 3. 柱状图：订单对比（本周 vs 上周）
@@ -42,7 +42,7 @@ Mock.mock('/api/dashboard/role-distribution', 'get', () => {
 // 5. 雷达图：系统健康度
 Mock.mock('/api/dashboard/system-health', 'get', () => {
   return {
-    indicators: [
+    indicators: [ //雷达图五个维度
       { name: 'CPU', max: 100 },
       { name: '内存', max: 100 },
       { name: '磁盘 IO', max: 100 },

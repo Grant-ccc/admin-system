@@ -7,11 +7,13 @@ export default function Login(){
     const login = useAuthStore((state) => state.login)
     const navigate = useNavigate()
 
-    //好精简哇
     const onFinish = async (values) => {
         const ok = await login(values)
 
         if (ok){
+            //跳转到主页面
+            //选择useNavigate 保持单页应用跳转的流畅性 不用重新加载一遍资源（其实也没必要
+            //状态保持（主要是token不能被清理掉了
             navigate('/')
         } else {
             message.error('账号或密码错误')

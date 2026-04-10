@@ -10,7 +10,7 @@ export const permissionTree = [
     {
         id: 'users',
         label: '用户管理',
-        children: [  //表明这是一个树结构 夫操作节点是模块，子节点是具体
+        children: [  //表明这是一个树结构 父操作节点是模块，子节点是具体
             { id: 'users:view', label: '查看用户' },
             { id: 'users:add', label: '添加用户' },
             { id: 'users:edit', label: '编辑用户' },

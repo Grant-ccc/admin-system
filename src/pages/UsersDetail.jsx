@@ -2,6 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from  'react'
 import { Card, Descriptions, Button, Select, message } from 'antd'
 import axios from 'axios'
+import api from '../api'
 import UserAvatar from '../components/UserAvatar'
 
 export default function UsersDetail() {
@@ -11,7 +12,7 @@ export default function UsersDetail() {
     const [user, setUser] = useState(null)
 
     const fetchUser = async () => {
-        const res = await axios.get(`/api/users/${id}`) //axios 返回的响应对象
+        const res = await api.get(`/api/users/${id}`) //axios 返回的响应对象
         //res.data      → HTTP 响应体（你的 Mock 返回的整个 JSON）
         //res.data.data → JSON 里的 data 字段
         setUser(res.data.data)
